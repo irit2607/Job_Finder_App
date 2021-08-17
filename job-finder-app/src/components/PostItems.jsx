@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Button, Card ,Form, Col,Row} from 'react-bootstrap';
+import {Button, Card ,Form, Col,Row} from 'react-bootstrap';
 
 const PostItems = () => {
     return (

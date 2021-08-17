@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Modal, Form, Row, Col } from 'react-bootstrap';
-import FormPost from './FormPost';
+// import FormPost from './FormPost';
 
 const PostJob = ({ postjob }) => {
 

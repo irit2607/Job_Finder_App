@@ -1,8 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navbar, Container, Button, Card } from 'react-bootstrap';
 import PostJob from './PostJob';
+import Allpost from './Allpost';
 
 const NavBar = () => {
+
+    let initTodo;
+    if (localStorage.getItem("allpost") === null) {
+        initTodo = [];
+    }
+    else {
+        initTodo = JSON.parse(localStorage.getItem("allpost"));
+    }
+
+    const postjob = (jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc) => {
+        console.log("addpost", jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc);
+        let sno;
+        if (allpost.length === 0) {
+            sno = 0;
+        }
+        else {
+            sno = allpost[allpost.length - 1].sno + 1;
+        }
+
+        const mypost = {
+            sno: sno,
+            jobtitle: jobtitle,
+            fulltime: fulltime,
+            companyname: companyname,
+            companyurl: companyurl,
+            joblink: joblink,
+            remote: remote,
+            jobdesc: jobdesc,
+
+        }
+        setTodos([...allpost, mypost]);
+        console.log(mypost);
+    }
+
+    const [allpost, setTodos] = useState(initTodo);
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(allpost));
+    }, [allpost])
 
     return (
         <>
@@ -12,7 +51,7 @@ const NavBar = () => {
                         💻 Job Application
                     </Navbar.Brand>
 
-                  <PostJob/>
+                    <PostJob postjob={postjob} />
 
                 </Container>
 
@@ -32,12 +71,14 @@ const NavBar = () => {
                             <option>Remote </option>
                             <option value="1">Remote</option>
                             <option value="2">In office</option>
-                         
+
                         </select>
                         <Button style={{ backgroundColor: "purple", marginLeft: '25px', height: '50px', width: '19rem' }}>POST JOB</Button>{' '}
                     </Card.Header>
 
                 </Card>
+
+                <Allpost allpost={allpost} />
             </div>
 
 

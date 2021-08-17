@@ -30,6 +30,7 @@ const PostJob = ({ postjob }) => {
         }
 
     }
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -43,15 +44,12 @@ const PostJob = ({ postjob }) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={submit}>
-
-
                         <Row className="mb-3">
                             <Form.Group as={Col} >
                                 <Form.Control type="text" value={jobtitle} onChange={(e) => setJobtitle(e.target.value)} id="jobtitle" placeholder="Job Title*" />
                             </Form.Group>
 
                             <Form.Group as={Col}>
-
                                 <Form.Select defaultValue="Choose..." value={fulltime} onChange={(e) => setFulltime(e.target.value)} id="fulltime">
                                     <option>Choose...</option>
                                     <option>Full Time</option>
@@ -113,9 +111,10 @@ const PostJob = ({ postjob }) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    {/* <Button variant="primary" onClick={handleClose}>
                         Post Job
-                    </Button>
+                    </Button> */}
+                    <button type="submit" className="btn btn-primary mb-3">Submit</button>
                 </Modal.Footer>
             </Modal>
         </>

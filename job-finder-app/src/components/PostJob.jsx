@@ -45,7 +45,7 @@ const PostJob = ({ postjob }) => {
                 <Modal.Body>
                     <Form onSubmit={submit}>
                         <Row className="mb-3">
-                            <Form.Group as={Col} >
+                            <Form.Group as={Col}>
                                 <Form.Control type="text" value={jobtitle} onChange={(e) => setJobtitle(e.target.value)} id="jobtitle" placeholder="Job Title*" />
                             </Form.Group>
 
@@ -104,7 +104,7 @@ const PostJob = ({ postjob }) => {
                             <Button variant="outline-primary">SQL</Button>{' '}
 
                         </Form.Group>
-
+                        <button type="submit" className="btn btn-primary mb-3">Submit</button>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -114,7 +114,7 @@ const PostJob = ({ postjob }) => {
                     {/* <Button variant="primary" onClick={handleClose}>
                         Post Job
                     </Button> */}
-                    <button type="submit" className="btn btn-primary mb-3">Submit</button>
+                   
                 </Modal.Footer>
             </Modal>
         </>

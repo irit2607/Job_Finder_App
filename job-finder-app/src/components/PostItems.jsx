@@ -1,14 +1,14 @@
 import React from 'react'
 import {Button, Card ,Form, Col,Row} from 'react-bootstrap';
 
-const PostItems = (allitem) => {
+const PostItems = ({allitem}) => {
     return (
         <div>
             <Card className="text-center" style={{ margin: '10px 160px 15px' }}>
                 <Card.Header>
                     <Row >
                         <Form.Group as={Col}>
-                        <Form.Label style={{textAlign:'left'}}>{allitem.compnanyname}</Form.Label>
+                        <Form.Label style={{textAlign:'left'}}>{allitem.companyname}</Form.Label>
                         </Form.Group>
 
                         <Form.Group as={Col}>

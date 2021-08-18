@@ -5,12 +5,12 @@ import Allpost from './Allpost';
 
 const NavBar = () => {
 
-    let initTodo;
+    let initPost;
     if (localStorage.getItem("allpost") === null) {
-        initTodo = [];
+        initPost = [];
     }
     else {
-        initTodo = JSON.parse(localStorage.getItem("allpost"));
+        initPost = JSON.parse(localStorage.getItem("allpost"));
     }
 
     const postjob = (jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc) => {
@@ -34,13 +34,13 @@ const NavBar = () => {
             jobdesc: jobdesc,
 
         }
-        setTodos([...allpost, mypost]);
+        setAllpost([...allpost, mypost]);
         console.log(mypost);
     }
 
-    const [allpost, setTodos] = useState(initTodo);
+    const [allpost, setAllpost] = useState(initPost);
     useEffect(() => {
-        localStorage.setItem("todos", JSON.stringify(allpost));
+        localStorage.setItem("posts", JSON.stringify(allpost));
     }, [allpost])
 
     return (

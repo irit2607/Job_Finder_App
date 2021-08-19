@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Button, Card, Form, Col, Row ,Modal} from 'react-bootstrap';
-// import CheckBox from './CheckBox';
 
 const PostItems = ({ allitem }) => {
 

@@ -44,19 +44,19 @@ const PostItems = ({ allitem }) => {
                             <br/>
                             {allitem.fulltime}
                             <br/>
-                            Company url:{allitem.companyurl}
+                            Company url: {allitem.companyurl}
                             <br/>
                             Job Link: {allitem.joblink}
                             <br/>
                             {allitem.remote}
+                            <br/>
+                            {allitem.jobdesc}
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>
                                     Close
                                 </Button>
-                                <Button variant="primary" onClick={handleClose}>
-                                    Save Changes
-                                </Button>
+                               
                             </Modal.Footer>
                         </Modal>
 

@@ -51,7 +51,7 @@ const NavBar = () => {
                         💻 Job Application
                     </Navbar.Brand>
 
-                    <PostJob postjob={postjob} />
+                    <PostJob postjob={postjob}/>
 
                 </Container>
 

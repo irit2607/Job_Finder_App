@@ -1,31 +1,65 @@
-import React from 'react'
-import {Button, Card ,Form, Col,Row} from 'react-bootstrap';
+import React, { useState } from 'react'
+import { Button, Card, Form, Col, Row ,Modal} from 'react-bootstrap';
+// import CheckBox from './CheckBox';
 
-const PostItems = ({allitem}) => {
+const PostItems = ({ allitem }) => {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <div>
             <Card className="text-center" style={{ margin: '10px 160px 15px' }}>
                 <Card.Header>
                     <Row >
                         <Form.Group as={Col}>
-                        <Form.Label style={{textAlign:'left'}}>{allitem.companyname}</Form.Label>
+                            <Form.Label style={{ textAlign: 'left' }}>{allitem.companyname}</Form.Label>
                         </Form.Group>
 
                         <Form.Group as={Col}>
-                        <Form.Label>Time | {allitem.fulltime} | {allitem.remote}</Form.Label>
+                            <Form.Label>Time | {allitem.fulltime} | {allitem.remote}</Form.Label>
                         </Form.Group>
-                       
+
                     </Row>
 
-                    <Row>             
-                    <Button style={{ backgroundColor: "purple", marginLeft: '25px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
-                    <Form.Group >
-                    <Button variant="outline-primary">JavaScript</Button>{' '}
-    <Button variant="outline-primary">React</Button>{' '}
+                    <Row>
+                        <Button style={{ backgroundColor: "purple", marginLeft: '25px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
+                        <Form.Group >
+                            <Button variant="outline-primary">JavaScript</Button>{' '}
+                            <Button variant="outline-primary">React</Button>{' '}
                         </Form.Group>
-                    
-                        <Button variant="outline-primary" style={{borderRadius:'20px', marginLeft: '25px', height: '35px', width: '8rem' }}>Check</Button>{' '}
-                    
+
+                        {/* <CheckBox/> */}
+
+                        <Button variant="outline-primary" onClick={handleShow}>Check</Button>{' '}
+
+
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>{allitem.companyname}</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>Job title: {allitem.jobtitle} 
+                            <br/>
+                            {allitem.fulltime}
+                            <br/>
+                            Company url:{allitem.companyurl}
+                            <br/>
+                            Job Link: {allitem.joblink}
+                            <br/>
+                            {allitem.remote}
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                                <Button variant="primary" onClick={handleClose}>
+                                    Save Changes
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+
                     </Row>
                 </Card.Header>
 
@@ -54,4 +88,3 @@ export default PostItems
 // }
 
 // export default TodosItem
- 

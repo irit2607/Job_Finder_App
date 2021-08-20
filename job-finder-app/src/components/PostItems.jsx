@@ -45,16 +45,17 @@ const PostItems = ({ allitem }) => {
                             <Modal.Header closeButton>
                                 <Modal.Title>{allitem.companyname}</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>Job title: {allitem.jobtitle} 
+                            <Modal.Body><b>Job title: </b> {allitem.jobtitle} 
                             <br/>
                             {allitem.fulltime}
                             <br/>
-                            Company url: {allitem.companyurl}
+                            <b>Company url: </b>{allitem.companyurl}
                             <br/>
-                            Job Link: {allitem.joblink}
+                            <b>Job Link: </b>{allitem.joblink}
                             <br/>
                             {allitem.remote}
                             <br/>
+                            <b>Job Description: </b>
                             {allitem.jobdesc}
                             </Modal.Body>
                             <Modal.Footer>

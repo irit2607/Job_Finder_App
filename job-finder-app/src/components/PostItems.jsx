@@ -23,7 +23,7 @@ const PostItems = ({ allitem }) => {
 
                     </Row>
 
-                    <br/><br/>
+                    <br/>
 
                     <Row>
                         <Button style={{ backgroundColor: "purple", marginLeft: '25px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}

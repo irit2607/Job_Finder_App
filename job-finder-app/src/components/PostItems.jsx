@@ -14,25 +14,31 @@ const PostItems = ({ allitem }) => {
                 <Card.Header>
                     <Row >
                         <Form.Group as={Col}>
-                            <Form.Label style={{ textAlign: 'left' }}>{allitem.companyname}</Form.Label>
+                            <Form.Label style={{ marginLeft:'-20rem' }}><b>{allitem.companyname}</b></Form.Label>
                         </Form.Group>
 
                         <Form.Group as={Col}>
-                            <Form.Label>Time | {allitem.fulltime} | {allitem.remote}</Form.Label>
+                            <Form.Label  style={{ marginLeft:'10rem' }}>Time | {allitem.fulltime} | {allitem.remote}</Form.Label>
                         </Form.Group>
 
                     </Row>
 
+                    <br/><br/>
+
                     <Row>
                         <Button style={{ backgroundColor: "purple", marginLeft: '25px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
-                        <Form.Group >
+                        <Button style={{ backgroundColor: "", marginLeft: '85px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
+                        <Button style={{ backgroundColor: "", marginLeft: '8px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
+                       
+                        {/* <Form.Group >
+
                             <Button variant="outline-primary">JavaScript</Button>{' '}
                             <Button variant="outline-primary">React</Button>{' '}
-                        </Form.Group>
+                        </Form.Group> */}
 
                         {/* <CheckBox/> */}
 
-                        <Button variant="outline-primary" onClick={handleShow}>Check</Button>{' '}
+                        <Button style={{ backgroundColor: "black", borderRadius:'18px', marginLeft: '108px', height: '35px', width: '8rem' }} onClick={handleShow}>Check</Button>{' '}
 
 
                         <Modal show={show} onHide={handleClose}>

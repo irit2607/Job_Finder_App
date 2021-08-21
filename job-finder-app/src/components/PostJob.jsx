@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Modal, Form, Row, Col } from 'react-bootstrap';
 // import FormPost from './FormPost';
+import DropdownMultiselect from "react-multiselect-dropdown-bootstrap";
 
 const PostJob = ({ postjob }) => {
 
@@ -11,15 +12,16 @@ const PostJob = ({ postjob }) => {
     const [joblink, setJoblink] = useState("");
     const [remote, setRemote] = useState("");
     const [jobdesc, setJobdesc] = useState("");
+    const [skills, setSkills] = useState("");
 
 
     const submit = (e) => {
         e.preventDefault();
-        if (!jobtitle || !fulltime || !companyname || !companyurl || !joblink || !remote || !jobdesc) {
+        if (!jobtitle || !fulltime || !companyname || !companyurl || !joblink || !remote || !jobdesc ||!skills) {
             alert("JobTitle or Description cannot be blank")
         }
         else {
-            postjob(jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc);
+            postjob(jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc, skills);
             setJobtitle("");
             setFulltime("");
             setCompanyname("");
@@ -27,6 +29,7 @@ const PostJob = ({ postjob }) => {
             setJoblink("");
             setRemote("");
             setJobdesc("");
+            setSkills("");
         }
 
     }
@@ -93,17 +96,12 @@ const PostJob = ({ postjob }) => {
                             <Form.Control value={jobdesc} onChange={(e) => setJobdesc(e.target.value)} id="jobdesc" placeholder="Job Description" />
                         </Form.Group>
 
-                        <Form.Group className="mb-3">
-                            <Form.Label>Skills*</Form.Label>
-                            <br />
-                            <Button variant="outline-primary">JavaScript</Button>{' '}
-                            <Button variant="outline-primary">React</Button>{' '}
-                            <Button variant="outline-primary">Node</Button>{' '}
-                            <Button variant="outline-primary">Vue</Button>{' '}
-                            <Button variant="outline-primary">Firebase</Button>{' '}
-                            <Button variant="outline-primary">SQL</Button>{' '}
+                        <DropdownMultiselect value={skills} handleOnChange={(e) => setSkills(e)} id="skills"  placeholder="Required Skils"
+                            options={["JavaScript", "React", "Node", "Vue", "Firebase", "SQL"]}
+                            
+                        />
+                        <br/>
 
-                        </Form.Group>
                         <button type="submit" className="btn btn-primary mb-3">Submit</button>
                     </Form>
                 </Modal.Body>
@@ -114,7 +112,7 @@ const PostJob = ({ postjob }) => {
                     {/* <Button variant="primary" onClick={handleClose}>
                         Post Job
                     </Button> */}
-                   
+
                 </Modal.Footer>
             </Modal>
         </>

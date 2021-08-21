@@ -14,8 +14,8 @@ const NavBar = () => {
         initPost = JSON.parse(localStorage.getItem("allpost"));
     }
 
-    const postjob = (jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc) => {
-        console.log("addpost", jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc);
+    const postjob = (jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc, skills) => {
+        console.log("addpost", jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc, skills);
         let sno;
         if (allpost.length === 0) {
             sno = 0;
@@ -33,6 +33,7 @@ const NavBar = () => {
             joblink: joblink,
             remote: remote,
             jobdesc: jobdesc,
+            skills: skills,
 
         }
         setAllpost([...allpost, mypost]);

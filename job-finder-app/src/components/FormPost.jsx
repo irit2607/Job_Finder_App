@@ -58,6 +58,15 @@ const FormPost = () => {
           <Form.Control placeholder="Job Description" />
         </Form.Group>
 
+        <Form.Group as={Col} controlId="my_multiselect_field">
+      <Form.Label>My multiselect</Form.Label>
+      <Form.Control as="select" multiple value={field} onChange={e => setField([].slice.call(e.target.selectedOptions).map(item => item.value))}>
+        <option value="field1">Field 1</option>
+        <option value="field2">Field 2</option>
+        <option value="field3">Field 3</option>
+      </Form.Control>
+    </Form.Group>
+
         <Form.Group className="mb-3">
           <Form.Label>Skills*</Form.Label>
           <br />

@@ -27,9 +27,8 @@ const PostItems = ({ allitem }) => {
 
                     <Row>
                         <Button style={{ backgroundColor: "purple", marginLeft: '25px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
-                        <Button style={{ backgroundColor: "", marginLeft: '85px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
-                        <Button style={{ backgroundColor: "", marginLeft: '8px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
-                       
+                        
+                        <p>{allitem.skills}</p>
                         {/* <Form.Group >
 
                             <Button variant="outline-primary">JavaScript</Button>{' '}

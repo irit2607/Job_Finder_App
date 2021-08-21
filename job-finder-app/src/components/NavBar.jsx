@@ -37,10 +37,10 @@ const NavBar = () => {
         setAllpost([...allpost, mypost]);
         console.log(mypost);
     }
-
+    
     const [allpost, setAllpost] = useState(initPost);
     useEffect(() => {
-        localStorage.setItem("posts", JSON.stringify(allpost));
+        localStorage.setItem("allpost", JSON.stringify(allpost));
     }, [allpost])
 
     return (
@@ -51,7 +51,7 @@ const NavBar = () => {
                         💻 Job Application
                     </Navbar.Brand>
 
-                    <PostJob postjob={postjob}/>
+                    <PostJob postjob={postjob} />
 
                 </Container>
 

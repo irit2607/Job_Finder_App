@@ -3,6 +3,7 @@ import { Navbar, Container, Button, Card } from 'react-bootstrap';
 import PostJob from './PostJob';
 import Allpost from './Allpost';
 
+
 const NavBar = () => {
 
     let initPost;
@@ -37,7 +38,7 @@ const NavBar = () => {
         setAllpost([...allpost, mypost]);
         console.log(mypost);
     }
-    
+
     const [allpost, setAllpost] = useState(initPost);
     useEffect(() => {
         localStorage.setItem("allpost", JSON.stringify(allpost));

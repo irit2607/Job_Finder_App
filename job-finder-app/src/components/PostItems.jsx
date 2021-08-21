@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Card, Form, Col, Row ,Modal} from 'react-bootstrap';
 
-const PostItems = ({ allitem }) => {
+const PostItems = ({ allitem ,onDelete}) => {
 
     const [show, setShow] = useState(false);
 
@@ -12,9 +12,11 @@ const PostItems = ({ allitem }) => {
         <div>
             <Card className="text-center" style={{ margin: '10px 160px 15px' }}>
                 <Card.Header>
+                <button className="btn btn-sm btn-danger" onClick = {()=>{onDelete(allitem)}}>Delete</button> &emsp;
+                        
                     <Row >
-                        <Form.Group as={Col}>
-                            <Form.Label style={{ marginLeft:'-20rem' }}><b>{allitem.companyname}</b></Form.Label>
+                       <Form.Group as={Col}>
+                            <Form.Label style={{ marginLeft:'-10rem' }}><b>{allitem.companyname}</b></Form.Label>
                         </Form.Group>
 
                         <Form.Group as={Col}>
@@ -27,17 +29,12 @@ const PostItems = ({ allitem }) => {
 
                     <Row>
                         <Button style={{ backgroundColor: "purple", marginLeft: '25px', height: '35px', width: '8rem' }}>{allitem.jobtitle}</Button>{' '}
+                     
+                        <Form.Group as={Col}>
+                            <Form.Label style={{ }}><b>Skills Required: </b>{allitem.skills}</Form.Label>
+                        </Form.Group>
                         
-                        <p>{allitem.skills}</p>
-                        {/* <Form.Group >
-
-                            <Button variant="outline-primary">JavaScript</Button>{' '}
-                            <Button variant="outline-primary">React</Button>{' '}
-                        </Form.Group> */}
-
-                        {/* <CheckBox/> */}
-
-                        <Button style={{ backgroundColor: "black", borderRadius:'18px', marginLeft: '108px', height: '35px', width: '8rem' }} onClick={handleShow}>Check</Button>{' '}
+                        <Button style={{ backgroundColor: "black", borderRadius:'18px', marginLeft: '50px', height: '35px', width: '8rem' }} onClick={handleShow}>Check</Button>{' '}
 
 
                         <Modal show={show} onHide={handleClose}>

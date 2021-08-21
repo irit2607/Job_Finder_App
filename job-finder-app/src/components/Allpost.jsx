@@ -11,7 +11,7 @@ const Allpost = (props) => {
                 props.allpost.map((allitem) => {
                     return(
                         <>
-                        <PostItems allitem={allitem} key={allitem.sno} />
+                        <PostItems allitem={allitem} key={allitem.sno} onDelete={props.onDelete}/>
                         
                         </>
                     )

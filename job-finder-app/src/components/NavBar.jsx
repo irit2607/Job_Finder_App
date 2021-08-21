@@ -40,6 +40,13 @@ const NavBar = () => {
         console.log(mypost);
     }
 
+    const onDelete = (allitem) => {
+        console.log("I am ondelete", allitem);
+        setAllpost(allpost.filter((e) => {
+          return e !== allitem;
+        }));
+      }
+    
     const [allpost, setAllpost] = useState(initPost);
     useEffect(() => {
         localStorage.setItem("allpost", JSON.stringify(allpost));
@@ -80,7 +87,7 @@ const NavBar = () => {
 
                 </Card>
 
-                <Allpost allpost={allpost} />
+                <Allpost allpost={allpost} onDelete={onDelete}/>
             </div>
 
 

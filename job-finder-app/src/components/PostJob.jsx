@@ -97,7 +97,7 @@ const PostJob = ({ postjob }) => {
                         </Form.Group>
 
                         <DropdownMultiselect value={skills} handleOnChange={(e) => setSkills(e)} id="skills"  placeholder="Required Skils"
-                            options={["JavaScript", "React", "Node", "Vue", "Firebase", "SQL"]}
+                            options={["JavaScript ", "React", "Node", "Vue", "Firebase", "SQL"]}
                             
                         />
                         <br/>

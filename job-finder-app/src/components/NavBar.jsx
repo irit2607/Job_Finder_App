@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Navbar, Container} from 'react-bootstrap';
-import Search from './Search';
 import PostJob from './PostJob';
 import Allpost from './Allpost';
 
@@ -69,12 +68,8 @@ const NavBar = () => {
 
             <div>
 
-                <Search />
-
-
                 <Allpost allpost={allpost} onDelete={onDelete} />
-
-
+                
             </div>
 
 

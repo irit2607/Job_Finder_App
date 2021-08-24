@@ -18,7 +18,7 @@ const PostJob = ({ postjob }) => {
     const submit = (e) => {
         e.preventDefault();
         if (!jobtitle || !fulltime || !companyname || !companyurl || !joblink || !remote || !jobdesc ||!skills) {
-            alert("JobTitle or Description cannot be blank")
+            alert("All fields are compulsory")
         }
         else {
             postjob(jobtitle, fulltime, companyname, companyurl, joblink, remote, jobdesc, skills);
@@ -102,18 +102,22 @@ const PostJob = ({ postjob }) => {
                         />
                         <br/>
 
-                        <button type="submit" className="btn btn-primary mb-3">Submit</button>
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
+                        
+                        <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
+                    </Button>
+                    <Button type="submit" className="btn btn-primary mb-1.8" >
+                       Submit
                     </Button>
                     {/* <Button variant="primary" onClick={handleClose}>
                         Post Job
                     </Button> */}
 
                 </Modal.Footer>
+                    </Form>
+                </Modal.Body>
+               
             </Modal>
         </>
     )

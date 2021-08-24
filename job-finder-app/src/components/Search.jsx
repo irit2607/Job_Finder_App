@@ -21,7 +21,7 @@ const Search = () => {
 
                         </select>
                         <Button style={{ backgroundColor: "purple", marginLeft: '25px', height: '50px', width: '19rem' }}>
-                        POST JOB
+                        Search
                         </Button>{' '}
                     </Card.Header>
 

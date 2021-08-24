@@ -43,16 +43,21 @@ const PostItems = ({ allitem ,onDelete}) => {
                             </Modal.Header>
                             <Modal.Body><b>Job title: </b> {allitem.jobtitle} 
                             <br/>
+                            <b>Time: </b>
                             {allitem.fulltime}
                             <br/>
                             <b>Company url: </b>{allitem.companyurl}
                             <br/>
                             <b>Job Link: </b>{allitem.joblink}
                             <br/>
+                            <b>Place: </b>
                             {allitem.remote}
                             <br/>
                             <b>Job Description: </b>
                             {allitem.jobdesc}
+                            <br/>
+                            <b>Skills: </b>
+                            {allitem.skills}
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>

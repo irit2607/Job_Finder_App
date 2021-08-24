@@ -17,7 +17,7 @@ const PostJob = ({ postjob }) => {
 
     const submit = (e) => {
         e.preventDefault();
-        if (!jobtitle || !fulltime || !companyname || !companyurl || !joblink || !remote || !jobdesc ||!skills) {
+        if (!jobtitle || !fulltime || !companyname || !companyurl || !joblink || !remote || !jobdesc || !skills) {
             alert("All fields are compulsory")
         }
         else {
@@ -96,28 +96,24 @@ const PostJob = ({ postjob }) => {
                             <Form.Control value={jobdesc} onChange={(e) => setJobdesc(e.target.value)} id="jobdesc" placeholder="Job Description" />
                         </Form.Group>
 
-                        <DropdownMultiselect value={skills} handleOnChange={(e) => setSkills(e)} id="skills"  placeholder="Required Skils"
-                            options={["JavaScript ", "React", "Node", "Vue", "Firebase", "SQL"]}
-                            
+                        <DropdownMultiselect value={skills} handleOnChange={(e) => setSkills(e)} id="skills" placeholder="Required Skils"
+                            options={["JavaScript ", "React ", "Node ", "Vue ", "Firebase ", "SQL "]}
+
                         />
-                        <br/>
+                        <br />
 
-                        
                         <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button type="submit" className="btn btn-primary mb-1.8" >
-                       Submit
-                    </Button>
-                    {/* <Button variant="primary" onClick={handleClose}>
-                        Post Job
-                    </Button> */}
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                            <Button type="submit" className="btn btn-primary mb-1.8" >
+                                Submit
+                            </Button>
 
-                </Modal.Footer>
+                        </Modal.Footer>
                     </Form>
                 </Modal.Body>
-               
+
             </Modal>
         </>
     )

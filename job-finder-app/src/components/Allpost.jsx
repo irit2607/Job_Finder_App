@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import CheckBox from './CheckBox'
 import PostItems from './PostItems'
 
 import { Card, Button } from 'react-bootstrap';
@@ -9,21 +8,23 @@ const Allpost = (props) => {
     const [job, setJob] = useState(
         {
             time: 'Full Time',
-            place: 'Remote',
+            // place: 'Remote'
         }
     );
 
     const [search, setSearch] = useState(0);
-    const { time, place } = job;
+    // const [submitSearch, setSubmitSearch] = useState(0);
+    const { time /*, place */ } = job;
 
     const onInputChange = e => {
         setJob({ ...job, [e.target.name]: e.target.value });
+        setSearch(1);
 
-        
     }
 
-    const onSubmit = () => {
-        setSearch(1);
+    const submit = () => {
+        // setSubmitSearch(1);
+     
         console.log(job);
 
     }
@@ -33,25 +34,27 @@ const Allpost = (props) => {
 
 
             <div>
-                <form>
+                <form onSubmit={submit}>
                     <Card className="text-center">
                         <Card.Header>
-                            <select name="time" defaultValue="Full Time" onChange={e => onInputChange(e)} className="browser-default custom-select" style={{ borderRadius: '3 px', marginLeft: '25px', marginBottom: '15px', marginTop: '15px', backgroundColor: '#D0D0D0', width: '19rem', height: '50px' }}>
+                            
+                                <select name="time" onChange={e => onInputChange(e)} className="browser-default custom-select" style={{ borderRadius: '3 px', marginLeft: '25px', marginBottom: '15px', marginTop: '15px', backgroundColor: '#D0D0D0', width: '19rem', height: '50px' }}>
 
-                                <option value="Full Time">Full Time</option>
-                                <option value="Part Time">Part Time</option>
-                                <option value="Contract">Contract</option>
-                            </select>
+                                    <option value="Full Time">Full Time</option>
+                                    <option value="Part Time">Part Time</option>
+                                    <option value="Contract">Contract</option>
+                                </select>
 
-                            <select name="place" defaultValue="Remote" className="browser-default custom-select" style={{ borderRadius: '3 px', marginLeft: '25px', marginBottom: '15px', marginTop: '15px', backgroundColor: '#D0D0D0', width: '19rem', height: '50px' }}>
+                                <select className="browser-default custom-select" style={{ borderRadius: '3 px', marginLeft: '25px', marginBottom: '15px', marginTop: '15px', backgroundColor: '#D0D0D0', width: '19rem', height: '50px' }}>
 
-                                <option value="Remote">Remote</option>
-                                <option value="In office">In office</option>
+                                    <option value="Remote">Remote</option>
+                                    <option value="In office">In office</option>
 
-                            </select>
-                            <Button onClick={onSubmit} style={{ backgroundColor: "purple", marginLeft: '25px', height: '50px', width: '19rem' }}>
-                                SEARCH JOB
-                            </Button>{' '}
+                                </select>
+                                <Button type="submit" style={{ backgroundColor: "purple", marginLeft: '25px', height: '50px', width: '19rem' }}>
+                                    SEARCH JOB
+                                </Button>
+                           
                         </Card.Header>
 
                     </Card>
@@ -65,7 +68,7 @@ const Allpost = (props) => {
                     props.allpost.filter((allitem) => {
                         if (!search) {
                             return allitem
-                        } else if (allitem.fulltime === time && allitem.remote === place) {
+                        } else if (allitem.fulltime === time) {
                             return allitem
                         }
                     }).map((allitem) => (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, Container, Button, Card } from 'react-bootstrap';
+import { Navbar, Container} from 'react-bootstrap';
+import Search from './Search';
 import PostJob from './PostJob';
 import Allpost from './Allpost';
 
@@ -43,10 +44,10 @@ const NavBar = () => {
     const onDelete = (allitem) => {
         console.log("I am ondelete", allitem);
         setAllpost(allpost.filter((e) => {
-          return e !== allitem;
+            return e !== allitem;
         }));
-      }
-    
+    }
+
     const [allpost, setAllpost] = useState(initPost);
     useEffect(() => {
         localStorage.setItem("allpost", JSON.stringify(allpost));
@@ -56,7 +57,7 @@ const NavBar = () => {
         <>
             <Navbar bg="dark" variant="dark" style={{ lineHeight: '162px' }}>
                 <Container>
-                    <Navbar.Brand href="#home" style={{ fontSize: '30px' }}>
+                    <Navbar.Brand style={{ fontSize: '30px' }}>
                         💻 Job Application
                     </Navbar.Brand>
 
@@ -68,10 +69,12 @@ const NavBar = () => {
 
             <div>
 
+                <Search />
 
-                <Allpost allpost={allpost} onDelete={onDelete}/>
 
-                
+                <Allpost allpost={allpost} onDelete={onDelete} />
+
+
             </div>
 
 

@@ -43,7 +43,7 @@ const PostItems = ({ allitem ,onDelete}) => {
                             </Modal.Header>
                             <Modal.Body><b>Job title: </b> {allitem.jobtitle} 
                             <br/>
-                            <b>Time: </b>
+                            <b>Time : </b>
                             {allitem.fulltime}
                             <br/>
                             <b>Company url: </b>{allitem.companyurl}

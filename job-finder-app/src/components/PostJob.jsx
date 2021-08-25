@@ -40,7 +40,7 @@ const PostJob = ({ postjob }) => {
     const handleShow = () => setShow(true);
     return (
         <>
-            <Button style={{ backgroundColor: "purple" }} onClick={handleShow}> POST JOB </Button>{' '}
+            <Button style={{ backgroundColor: "purple" , height: '40px', width: '10rem', marginBottom:'15px'}} onClick={handleShow}> POST JOB </Button>{' '}
             <Modal show={show} onHide={handleClose} animation={false}>
                 <Modal.Header closeButton>
                     <Modal.Title>Post Job</Modal.Title>

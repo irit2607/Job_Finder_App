@@ -56,7 +56,7 @@ const NavBar = () => {
         <>
             <Navbar bg="dark" variant="dark" style={{ lineHeight: '162px' }}>
                 <Container>
-                    <Navbar.Brand style={{ fontSize: '30px' }}>
+                    <Navbar.Brand style={{ fontSize: '30px',marginBottom:'15px'}}>
                         💻 Job Application
                     </Navbar.Brand>
 

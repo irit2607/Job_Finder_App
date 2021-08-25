@@ -33,7 +33,7 @@ const Allpost = (props) => {
 
             <div>
                 <form>
-                    <Card className="text-center">
+                    <Card className="text-center" style={{ margin: '-50px 160px 15px' }}>
                         <Card.Header>
                             <select name="time"  onChange={e => onInputChange(e)} className="browser-default custom-select" style={{ borderRadius: '3 px', marginLeft: '25px', marginBottom: '15px', marginTop: '15px', backgroundColor: '#D0D0D0', width: '19rem', height: '50px' }}>
 
@@ -59,7 +59,7 @@ const Allpost = (props) => {
 
 
             <div className="container" >
-                <h3 className="my-2">Job Applications</h3><hr />
+                <h3 className="my-4" style={{ textAlign:'center'}}>Job Applications</h3><hr />
                 {props.allpost.length === 0 ? "No Job Posted" :
                     props.allpost.filter((allitem) => {
                         if (!search ) {

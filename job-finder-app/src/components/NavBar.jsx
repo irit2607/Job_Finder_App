@@ -4,7 +4,6 @@ import PostJob from './PostJob';
 import Allpost from './Allpost';
 
 
-
 const NavBar = () => {
 
     let initPost;
@@ -55,15 +54,6 @@ const NavBar = () => {
 
     return (
         <>
-
-
-<div id="particles">
-  <div id="webcoderskull">
-    <h1>PARTICLE BACKGROUND</h1>
-    <p>Web Coder Skull Team</p>
-    
-  </div>
-</div>
 
             <Navbar bg="dark" variant="dark" style={{ lineHeight: '162px' }}>
                 <Container>

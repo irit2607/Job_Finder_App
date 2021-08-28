@@ -55,7 +55,7 @@ const Allpost = (props) => {
                         return allitem
                     }
                 }).map((allitem) => (
-                    <PostItems allitem={allitem} key={allitem.sno} onDelete={props.onDelete} />
+                    <PostItems allitem={allitem} key={allitem.sno} />
                     ))}
                 {/* {props.allpost.length === 0 ? "No Job Posted" :
                     props.allpost.map((allitem) => {

@@ -12,15 +12,13 @@ const PostItems = ({ allitem ,onDelete}) => {
         <div>
             <Card className="text-center" style={{ margin: '10px 160px 15px' }}>
                 <Card.Header>
-                <button className="btn btn-sm btn-danger" onClick = {()=>{onDelete(allitem)}}>Delete</button> &emsp;
-                        
-                    <Row >
+               <Row >
                        <Form.Group as={Col}>
                             <Form.Label style={{ marginLeft:'-10rem' }}><b>{allitem.companyname}</b></Form.Label>
                         </Form.Group>
 
                         <Form.Group as={Col}>
-                            <Form.Label  style={{ marginLeft:'10rem' }}>Time | {allitem.fulltime} | {allitem.remote}</Form.Label>
+                            <Form.Label  style={{ marginLeft:'10rem' }}> {allitem.fulltime} | {allitem.remote}</Form.Label>
                         </Form.Group>
 
                     </Row>
@@ -43,7 +41,7 @@ const PostItems = ({ allitem ,onDelete}) => {
                             </Modal.Header>
                             <Modal.Body><b>Job title: </b> {allitem.jobtitle} 
                             <br/>
-                            <b>Time : </b>
+                            <b>Duration : </b>
                             {allitem.fulltime}
                             <br/>
                             <b>Company url: </b>{allitem.companyurl}

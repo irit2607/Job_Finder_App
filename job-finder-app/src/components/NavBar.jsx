@@ -40,12 +40,12 @@ const NavBar = () => {
         console.log(mypost);
     }
 
-    const onDelete = (allitem) => {
-        console.log("I am ondelete", allitem);
-        setAllpost(allpost.filter((e) => {
-            return e !== allitem;
-        }));
-    }
+    // const onDelete = (allitem) => {
+    //     console.log("I am ondelete", allitem);
+    //     setAllpost(allpost.filter((e) => {
+    //         return e !== allitem;
+    //     }));
+    // }
 
     const [allpost, setAllpost] = useState(initPost);
     useEffect(() => {
@@ -69,7 +69,7 @@ const NavBar = () => {
 
             <div>
 
-                <Allpost allpost={allpost} onDelete={onDelete} />
+                <Allpost allpost={allpost}/>
                 
             </div>
 
